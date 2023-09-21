@@ -20,13 +20,13 @@ function gameLoop() {
         printBoard(board)
         checkBoard(board)
 
-        var input = parseInt(prompt(`Player ${player}, enter your next move:`))
+        var input = parseInt(prompt(`Player ${player}, enter your next move : `))
         let validMove = putPiece(board, input, player)
 
         if(validMove) {
             player = (player === "R" ? "Y" : "R")
         } while(!validMove) {
-            input = prompt(`Focus ${player}. Choose a valid move.`)
+            input = prompt(`Focus ${player}. Choose a valid move : `)
             validMove = putPiece(board, input, player)
             validMove && (player = (player === "R" ? "Y" : "R"))
         }
